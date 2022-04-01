@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToDoApp.Views.LoginView"
+             Shell.FlyoutBehavior="Disabled"
+             Shell.NavBarIsVisible="False"
+             Visual="Material"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             BackgroundColor="{x:StaticResource BackgroundColor}"
+             xmlns:viewModel="clr-namespace:ToDoApp.ViewModels"
+             x:DataType="viewModel:LoginViewModel"
+             >
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="250"/>
+                <RowDefinition  Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.2*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="0.2*"/>
+            </Grid.ColumnDefinitions>
+
+
+
+
+
+            <!--<BoxView BackgroundColor="White" Grid.Row="0" Grid.RowSpan="2" Grid.Column="0"/>
+            <BoxView BackgroundColor="White" Grid.Row="0" Grid.RowSpan="2" Grid.Column="3"/>
+            <BoxView BackgroundColor="red" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"/>-->
+
+
+            <Label Grid.Row="0" Grid.Column="0" Text="TODOAPP" TextColor="{x:StaticResource SecondLoginColor}" 
+                   VerticalOptions="Center" FontSize="50" FontAttributes="Bold" 
+                   HorizontalOptions="Center"
+                   xct:ShadowEffect.Color="{x:StaticResource PrymaryLoginColor}" xct:ShadowEffect.OffsetX="5" xct:ShadowEffect.OffsetY="5"
+                   Grid.ColumnSpan="4"/>
+
+            <Grid Grid.Row="1" Grid.Column="1"  Margin="20,0,20,0" Grid.ColumnSpan="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+
+                </Grid.RowDefinitions>
+
+                <Entry Placeholder="NickName" Text="{Binding NickName}" Grid.Row="0" PlaceholderColor="{x:StaticResource SecondLoginColor}"  
+                   BackgroundColor="{x:StaticResource TxtNackGroundColor}" TextColor="{x:StaticResource SecondLoginColor}"
+                  />
+
+                <Entry Placeholder="Password" Text="{Binding Password}" IsPassword="True" Grid.Row="1" PlaceholderColor="{x:StaticResource SecondLoginColor}"  
+                   BackgroundColor="{x:StaticResource TxtNackGroundColor}" Margin="0,30,0,0"   
+                       TextColor="{x:StaticResource SecondLoginColor}" 
+                  />
+
+                <Button BackgroundColor="{x:StaticResource PrymaryLoginColor}" Grid.Row="2" 
+                        Text="Iniciar Sesión" HorizontalOptions="Center" Margin="0,30,0,0"
+                        CornerRadius="30" Command="{Binding SaludarAsyncCommand}" CommandParameter="{Binding sasa}"
+                        />
+
+                <Button BackgroundColor="{x:StaticResource PrymaryLoginColor}" Grid.Row="3" 
+                        Text="Invitado" HorizontalOptions="Center" Margin="0,30,0,0" CornerRadius="30"
+                        />
+
+            </Grid>
+
+
+
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
